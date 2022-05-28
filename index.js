@@ -26,8 +26,8 @@ const questions = [
     },
     {
         type: "list",
-        message: "Please chose a license for your project.",
-        choices: ["Apache License v2.0", "BSD 3-Clause License", "BSD 2-Clause License", "GNU GPL", "GNU LGPL", "MIT License", "Mozilla Public License v2.0", "Common Develpment and Distribution License", "Eclipse Public License v2.0"],
+        message: "Please choose a license for your project.",
+        choices: ["Apache License v2.0", "BSD 3-Clause License", "BSD 2-Clause License", "GNU GPL v3", "GNU LGPL v3", "MIT License", "Mozilla Public License v2.0", "None"],
         name: "license",
     },
     {
@@ -52,14 +52,18 @@ const questions = [
     }
 ];
 
+const data = {}
+
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) { }
 
 // TODO: Create a function to initialize app
 function init() {
     inquirer.prompt(questions)
-        .then((response) =>
-            console.log(response))
+        .then((response) => {
+            data = response
+            console.log(data)
+        })
 }
 
 // Function call to initialize app
