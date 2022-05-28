@@ -63,7 +63,7 @@ function renderLicenseLink(license) {
 function renderLicenseSection(license, year, name) {
   switch (license) {
     case "Apache License v2.0":
-      return (`Copyright 2022 ${name}
+      return (`Copyright ${year} ${name}
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -174,7 +174,7 @@ function generateMarkdown(data) {
   ${data.usage}
 
   ## License
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(data.license, data.year, data.name)}
   ${renderLicenseLink(data.license)}
 
   ## Contributing
